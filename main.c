@@ -78,7 +78,7 @@ int main (int argc, char **argv)
 		file1.fd = open (file1.filename, O_WRONLY | O_CREAT, S_IRWXU|S_IRWXG|S_IRWXO);
 
 	} else if (file0.type == FILETYPE_STDIN) {
-		file0.fd = open (STDIN_FILENO, O_RDONLY, 0);
+		file0.fd = STDIN_FILENO;
 		file1.fd = open (file1.filename, O_WRONLY | O_CREAT, S_IRWXU|S_IRWXG|S_IRWXO);
 	} else {
 		print_help ();
